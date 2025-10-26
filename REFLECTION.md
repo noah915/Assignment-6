@@ -1,0 +1,7 @@
+Deployment Reflection
+
+What surprised me most moving from local development to cloud deployment was how small, implicit details become critical: port mappings, environment variables, filesystem paths, and persistent storage that “just work” on a laptop must be explicitly configured in the cloud. Local setups often rely on implicit assumptions (localhost, mutable file system, single-machine networking) that break when services run in managed, distributed environments.
+
+Cloud Run’s serverless model differs from running containers with Docker Compose in important ways. Cloud Run runs containers as a fully managed service: you don’t manage VMs, it autos-scales on demand, and the filesystem is ephemeral. Docker Compose runs containers you orchestrate on a host you control; scaling, networking, and persistence are your responsibility. In Cloud Run, you pay per use and get built-in load handling and infrastructure maintenance; with Compose you trade simplicity and direct control for more manual operations.
+
+For real-world applications, cloud deployment offers clear advantages: automatic scaling, higher availability, easier CI/CD integration, and offloaded infrastructure management — all of which speed delivery and improve resilience. These benefits come with the cost of stricter configuration, attention to security and secrets, and adapting to cloud-specific constraints.
